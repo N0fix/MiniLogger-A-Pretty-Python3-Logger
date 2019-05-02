@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Author : Victorien Blanchard
+# Author : N0fix
 # PEP8 compliant, python 3 only
 
 
@@ -23,3 +23,7 @@ class logger:
 if __name__ == "__main__":
     #  Writing bold green
     logger.log("This is a test", logger.BOLD + logger.SUCCESS)
+    for i in range(1, 100):
+        logger.log("{}/{} files processed...".format(i, 100),
+                   logger.INFO, '\r')
+        #Process something
