@@ -7,4 +7,4 @@ from logger import *
 if __name__ == "__main__":
   logger.log("This is an important warning!", logger.BOLD + logger.WARNING);
 ```
-![Example](example.png)
+![Example](example.gif)
