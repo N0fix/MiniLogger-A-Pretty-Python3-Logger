@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # Author : N0fix
 # PEP8 compliant, python 3 only
-
+import os
 
 class logger:
     HEADER = '\033[95m'  # Brown
@@ -16,7 +16,7 @@ class logger:
     RESET = "\033[0m"  # White
 
     FLAG_SHORT_LOGS = False  # If enabled, logs wont exceed 80 chars
-    MAX_LEN_LOGS = 80
+    MAX_LEN_LOGS = os.get_terminal_size().columns - 1  # term size at startup
 
     @staticmethod
     def log(str, color=RESET, endChr='\n'):
@@ -26,6 +26,8 @@ class logger:
 
     @staticmethod
     def _shortenString(str):
+        if len(str) <= logger.MAX_LEN_LOGS:
+            return str
         halfLine = int(logger.MAX_LEN_LOGS/2)
         return str[:halfLine - 2] + "..." + str[-halfLine + 1:]
 
