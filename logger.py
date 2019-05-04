@@ -15,15 +15,38 @@ class logger:
     UNDERLINE = '\033[4m'  # Underline
     RESET = "\033[0m"  # White
 
+    FLAG_SHORT_LOGS = False  # If enabled, logs wont exceed 80 chars
+    MAX_LEN_LOGS = 80
+
     @staticmethod
     def log(str, color=RESET, endChr='\n'):
+        if logger.FLAG_SHORT_LOGS:
+            str = logger._shortenString(str)
+        print(len(str))
         print(color + str + logger.RESET, end=endChr)
+
+    @staticmethod
+    def _shortenString(str):
+        halfLine = int(logger.MAX_LEN_LOGS/2)
+        return str[:halfLine - 2] + "..." + str[-halfLine + 1:]
 
 
 if __name__ == "__main__":
+
+    # ############# EXAMPLES ################# #
+
     #  Writing bold green
     logger.log("This is a test", logger.BOLD + logger.SUCCESS)
+
+    # Process something
     for i in range(1, 100):
         logger.log("{}/{} files processed...".format(i, 100),
                    logger.INFO, '\r')
-        #Process something
+
+    # Enable max 80 char logs
+    logger.FLAG_SHORT_LOGS = True
+
+    # Change max len logs
+    logger.MAX_LEN_LOGS = 40
+
+    # ######################################## #
