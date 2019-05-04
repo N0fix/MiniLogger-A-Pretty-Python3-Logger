@@ -10,7 +10,7 @@ class logger:
     SUCCESS = '\033[92m'  # Greem
     WARNING = '\033[93m'  # Yellow
     FAIL = '\033[91m'  # Red
-    _ENDC = '\033[0m'  # don't use this
+    NORMAL = '\033[0m'  # Default color
     BOLD = '\033[1m'  # Bold
     UNDERLINE = '\033[4m'  # Underline
     RESET = "\033[0m"  # White
