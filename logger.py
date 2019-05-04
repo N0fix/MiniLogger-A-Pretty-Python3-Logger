@@ -22,7 +22,6 @@ class logger:
     def log(str, color=RESET, endChr='\n'):
         if logger.FLAG_SHORT_LOGS:
             str = logger._shortenString(str)
-        print(len(str))
         print(color + str + logger.RESET, end=endChr)
 
     @staticmethod
