@@ -8,7 +8,7 @@ pip install minilogger
 ## Usage
 
 ```Python
-from logger import *
+import minilogger
 
 if __name__ == "__main__":
   logger.log("This is an important warning!", logger.BOLD + logger.WARNING);
