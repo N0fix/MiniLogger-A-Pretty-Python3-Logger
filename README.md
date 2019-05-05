@@ -1,6 +1,12 @@
 # Mini logger
 A simple python logger. Easy to use.
 
+## Installation
+
+pip install minilogger
+
+## Usage
+
 ```Python
 from logger import *
 
