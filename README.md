@@ -3,7 +3,7 @@ A simple python logger. Easy to use.
 
 ## Installation
 
-pip install minilogger
+`pip install minilogger`
 
 ## Usage
 
