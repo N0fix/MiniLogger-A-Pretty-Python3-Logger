@@ -8,7 +8,7 @@ A simple python logger. Easy to use.
 ## Usage
 
 ```Python
-import minilogger
+from minilogger import *
 
 if __name__ == "__main__":
   logger.log("This is an important warning!", logger.BOLD + logger.WARNING);
